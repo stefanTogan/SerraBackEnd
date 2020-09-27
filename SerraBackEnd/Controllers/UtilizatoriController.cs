@@ -66,12 +66,12 @@ namespace SerraBackEnd.Controllers
             _context = new PracticaSerraUpdateEntities();
             try
             {
-                
+                int ID = userInfo["ID"];
                 String nume = userInfo["Nume"];
                 String prenume = userInfo["Prenume"];
                 String email = userInfo["email"];
                 decimal telephone = userInfo["telephone"];
-                _context.UpdateUtilizator(0, nume, prenume, email, telephone);
+                _context.UpdateUtilizator(ID, nume, prenume, email, telephone);
                 return Ok("Updated");
             }
             catch(Exception ex)
